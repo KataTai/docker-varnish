@@ -49,6 +49,8 @@ RUN \
 	&& chgrp -R 0 /varnishfs \
 	&& chmod -R g+rwX /varnishfs
 
+ENV VARNISH_HOST 0.0.0.0
+ENV VARNISH_PORT 6081
 ENV VCL_CONFIG /etc/varnish/default.vcl
 ENV VARNISH_MEMORY 100m
 
