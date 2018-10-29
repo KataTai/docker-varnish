@@ -3,7 +3,7 @@ set -e
 
 exec bash -c \
 	"exec varnishd -n /varnishfs -F \
-	-a :${VARNISH_PORT:-6081} \
+	-a ${VARNISH_HOST}:${VARNISH_PORT} \
 	-f ${VCL_CONFIG} \
 	-s malloc,${VARNISH_MEMORY} \
 	${VARNISHD_PARAMS}"
